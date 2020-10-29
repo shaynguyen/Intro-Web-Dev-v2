@@ -58,12 +58,15 @@ img {
 }
 
 .topics-item {
-  text-decoration: none;
   align-items: center;
   font-size: 2em;
   padding: .5em;
 }
 
+.topic-link {
+  text-decoration: none;
+  color: black;
+}
 
 .topics-item:hover {
   text-decoration: underline;
