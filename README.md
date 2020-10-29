@@ -1,10 +1,10 @@
-#Introduction to Web Development (Version 2)
-An introduction (or review) of  the basics of Web Development from Frontend masters
+# Introduction to Web Development (Version 2)
+An introduction (or review) of the basics of Web Development from Frontend masters
 
-#Resources
+## Resources
 https://btholt.github.io/intro-to-web-dev-v2/
 
-#Sections
+## Sections
 * Introduction
 * Learning HTML
 * Learning CSS
@@ -12,3 +12,7 @@ https://btholt.github.io/intro-to-web-dev-v2/
 * Using Ajax and Node.js
 * Learning Git
 * Using Node.js
+
+## Project
+### #1
+![project example](https://btholt.github.io/intro-to-web-dev-v2/static/html-css-project-66e24f56e6d7f2f3dc35819ea794b812-9c00e.png)
