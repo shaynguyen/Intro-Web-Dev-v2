@@ -2,15 +2,6 @@
   box-sizing: border-box;
 }
 
-img {
-  display: block;
-}
-
-.img-container {
-  display: flex;
-  justify-content: center;
-}
-
 .site-header {
   margin: 3em;
   text-align: center;
@@ -32,6 +23,15 @@ img {
 
 .news-article {
   padding: 1em;
+}
+
+img {
+  display: block;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
 }
 
 .quarter-article {
