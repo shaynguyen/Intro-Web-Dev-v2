@@ -1,90 +1,94 @@
+let bufferStr = "0"
 let runningTotal = 0;
-let buffer = "0";
-let previousOperator;
-let calculatorScreen = document.querySelector(".calculator-screen")
+let operator;
+let calculatorScreen = document.querySelector(".calculator-screen");
 
 document
   .querySelector(".calculator-buttons")
   .addEventListener("click", function (event) {
-    buttonClick(event.target.innerText);
+    onButtonClick(event);
   })
 
-function buttonClick(value) {
-  if (isNaN(parseInt(value))) {
-    handleSymbol(value)
+function onButtonClick(event) {
+  const buttonValue = event.target.innerText;
+
+  if (isNaN(parseInt(buttonValue))) {
+    handleSymbol(buttonValue)
   } else {
-    handleNumber(value)
+    handleNumber(buttonValue)
   }
-  rerender()
+
+  renderScreen();
 }
 
-function handleSymbol(value) {
-  switch (value) {
-    case "C":
-      buffer = "0";
-      runningTotal = 0;
-      previousOperator = null;
+function handleSymbol(operationStr) {
+  switch (operationStr) {
+    case "C": {
+      handleClear();
       break;
-    case "=":
-      if (previousOperator === null) {
-        return;
-      }
-      flushOperation(parseInt(buffer));
-      previousOperator = null;
-      buffer = "" + runningTotal;
-      runningTotal = 0;
+    }
+    case "<": {
+      handleBackspace();
       break;
-    case "<":
-      if (buffer.length === 1) {
-        buffer = "0"
-      } else {
-        buffer = buffer.substring(0, buffer.length - 1)
-      }
+    }
+    case "=": {
+      handleMath();
       break;
-    default:
-      handleMath(value);
+    }
+    default: {
+      handleOperator(operationStr);
       break;
+    }
   }
 }
 
-function flushOperation(intBuffer) {
-  if (previousOperator === "+") {
-    runningTotal += intBuffer;
-  } else if (previousOperator === "-") {
-    runningTotal -= intBuffer;
-  } else if (previousOperator === "x") {
-    runningTotal *= intBuffer;
+function handleClear() {
+  bufferStr = "0";
+  runningTotal = 0;
+  operator = null;
+}
+
+function handleBackspace() {
+  if (bufferStr.length === 1) {
+    bufferStr = "0";
+    runningTotal = 0;
   } else {
-    runningTotal /= intBuffer;
+    bufferStr = bufferStr.substring(0, bufferStr.length - 1)
+    runningTotal = parseInt(bufferStr)
   }
 }
 
-function handleMath(value) {
-  const intBuffer = parseInt(buffer);
+function handleMath() {
+  flushOperation()
+  bufferStr = "" + runningTotal
+}
 
-  if (runningTotal === 0) {
-    runningTotal = intBuffer;
+function flushOperation() {
+  if (operator === "+") {
+    runningTotal += parseInt(bufferStr)
+  } else if (operator === "-") {
+    runningTotal -= parseInt(bufferStr)
+  } else if (operator === "x") {
+    runningTotal *= parseInt(bufferStr)
   } else {
-    flushOperation(intBuffer)
+    runningTotal /= parseInt(bufferStr)
   }
-
-  previousOperator = value;
-  buffer = "0";
 }
 
-function handleNumber(value) {
-  if (buffer === "0") {
-    buffer = value;
+function handleOperator(value) {
+  runningTotal = parseInt(bufferStr)
+  operator = value;
+  bufferStr = "0";
+}
+
+function handleNumber(numberStr) {
+  if (bufferStr === "0") {
+    bufferStr = numberStr;
   } else {
-    buffer += value;
+    bufferStr += numberStr;
   }
 }
 
-function rerender() {
-  calculatorScreen.innerText = buffer;
+function renderScreen() {
+  calculatorScreen.innerText = bufferStr;
 }
-
-
-
-
-
