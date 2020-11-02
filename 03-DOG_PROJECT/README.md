@@ -1,8 +1,19 @@
-# DOG PROJECT WITH AJAX & API
+# DOG PROJECT WITH AJAX, API, NODE, & EXPRESS
+[AJAX & API](https://btholt.github.io/intro-to-web-dev-v2/ajax) <br/>
+[NODE & EXPRESS](https://btholt.github.io/intro-to-web-dev-v2/node) <br/>
 
-## [Instructions](https://btholt.github.io/intro-to-web-dev-v2/ajax)
+## REQUIREMENTS 
+* create a node server
+* server web-page that display picture of dogs after pressing a button
 * using [dog.ceo](https://dog.ceo/dog-api/)
-* make a web-page that display picture of dogs after pressing a button
+* display dog after press a button
+
+## EXTENDS THE PROJECT
+* option to display multiple images of random dogs
+* option to select which breed to display
+* show a loading gif that shows when you're loading a new dog and then hide it when you're done
+
+## TIPS
 
 ### Useful functions & stuff
 
@@ -47,11 +58,9 @@ const img = document.createElement("img")
 listOfDogs.appendChild(img)
 ```
 
-#### REMINDERS ...
+## REMINDERS ...
 * fill out the alt attribute of img tag
 * style with css
-* show a loading gif that shows when you're loading a new dog and then hide it when you're done
-* select which breed of dogs to get from api
 * this project is a more open-ended than the previous.
 
 

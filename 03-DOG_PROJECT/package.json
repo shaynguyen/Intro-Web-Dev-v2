@@ -1,0 +1,16 @@
+{
+  "name": "03-DOG_PROJECT",
+  "version": "1.0.0",
+  "description": "[Instructions](https://btholt.github.io/intro-to-web-dev-v2/ajax) ## REQUIREMENTS",
+  "main": "public/doggo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
