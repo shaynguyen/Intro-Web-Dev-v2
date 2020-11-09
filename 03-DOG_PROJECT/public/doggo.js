@@ -18,13 +18,13 @@ function fetchBreedListFromEndpoint() {
       const listOfBreeds = Object.keys(result)
       const fullBreedList = []
       listOfBreeds.forEach(breed => {
+        const subBreeds = []
         if (result[breed].length) {
           result[breed].forEach((subBreed) => {
-            fullBreedList.push(`${subBreed} ${breed}`)
+            subBreeds.push(subBreed)
           })
-        } else {
-          fullBreedList.push(breed)
         }
+        fullBreedList.push({breed, subBreeds})
       })
       return fullBreedList
     })
@@ -35,10 +35,18 @@ function fetchBreedListFromEndpoint() {
 
 function updateSelectMenu(list) {
   const breedSelect = document.querySelector(".breed-select")
+
   list.forEach((breed) => {
     const opt = document.createElement("option")
-    opt.value = breed
-    opt.innerText = breed
+    if (breed.subBreeds.length) {
+      breed.subBreeds.forEach(subBreed => {
+        opt.value = `${breed.breed}/${subBreed}`
+        opt.innerText = `${breed.breed} ${subBreed}`
+      })
+    } else {
+      opt.value = breed.breed
+      opt.innerText = breed.breed
+    }
     breedSelect.appendChild(opt)
   })
 }
