@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 1em;
+  padding: 0 1em;
+  background-color: #F1F5F6;
+}
+
+header {
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 3em;
+}
+
+.doggo {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.doggo * {
+  margin: 5px;
+}
+
+.doggo-button {
+  font-weight: bold;
+  font-size: 20px;
+  border-color: #5785A7;
+  color: #5785A7;
+  background-color: #F3F4F6;
+  border-radius: .75em;
+  padding: .5em 1em;
+}
+
+.doggo-button:hover {
+  color: #FEFEFE;
+  background-color: #5785A7;
+}
+
+.doggo-button:active {
+  background-color: #6896B8;
+}
+
+.breed-select {
+  font-size: 25px;
+  font-family: serif;
+  text-align-last: center;
+}
