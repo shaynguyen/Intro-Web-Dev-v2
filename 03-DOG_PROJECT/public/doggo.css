@@ -48,3 +48,7 @@ header {
   font-family: serif;
   text-align-last: center;
 }
+
+.doggo-img {
+  border-radius: 10%;
+}

@@ -9,6 +9,8 @@
 * display dog after press a button
 
 ## EXTENDS THE PROJECT
+* load the page with a random dog
+* load another random dog "automatically" when user change ```select``` value
 * option to display multiple images of random dogs
 * option to select which breed to display
 * show a loading gif that shows when you're loading a new dog and then hide it when you're done
